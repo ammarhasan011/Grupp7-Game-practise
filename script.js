@@ -1,16 +1,17 @@
+//my variables
 const text = document.querySelector("h1");
 const buttons = document.querySelector(".buttons");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const Computer = document.querySelector("h2");
+const ComputerplayerDisplay = document.getElementById("ComputerplayerDisplay");
 
 rock.addEventListener("click", Rock);
 paper.addEventListener("click", Paper);
 scissors.addEventListener("click", Scissors);
 
 //optionComputer
-
 function Computerplayer() {
   var randomNum = Math.floor(Math.random() * 2);
 
@@ -22,7 +23,12 @@ function Computerplayer() {
   } else if (randomNum == 2) {
     return "scissors";
   }
+  //det ska vara något liknande för att visa datorns resultat
+  let ComputerplayerDisplay = Play(Computerplayer);
+  ComputerplayerDisplay.innerHTML = Computerplayer;
 }
+console.log(Computerplayer());
+
 
 function Play(ComputerPlayer, Player) {
   if (ComputerPlayer == Player) {
@@ -74,7 +80,7 @@ function Scissors() {
   text.innerHTML = restlut;
 }
 
-console.log(Computerplayer());
+
 
 //   if (player === "rock") {
 //     tie();
