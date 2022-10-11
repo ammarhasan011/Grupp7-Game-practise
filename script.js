@@ -3,6 +3,7 @@ const buttons = document.querySelector(".buttons");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const Computer = document.querySelector("h2");
 
 rock.addEventListener("click", Rock);
 paper.addEventListener("click", Paper);
@@ -10,7 +11,7 @@ scissors.addEventListener("click", Scissors);
 
 //optionComputer
 
-function ComputerPlayer() {
+function Computerplayer() {
   var randomNum = Math.floor(Math.random() * 2);
 
   if (randomNum == 0) {
@@ -52,19 +53,29 @@ function Play(ComputerPlayer, Player) {
   }
 }
 
-console.log(ComputerPlayer());
-
 function Rock() {
-  text.innerHTML = "Rock";
+  let ComputerPlayer = Computerplayer();
+  let Player = "rock";
+  let restlut = Play(Player, ComputerPlayer);
+  text.innerHTML = restlut;
 }
 
 function Paper() {
-  text.innerHTML = "Paper";
+  let ComputerPlayer = Computerplayer();
+  let Player = "paper";
+  let restlut = Play(Player, ComputerPlayer);
+  text.innerHTML = restlut;
 }
 
 function Scissors() {
-  text.innerHTML = "Scissors";
+  let ComputerPlayer = Computerplayer();
+  let Player = "scissors";
+  let restlut = Play(Player, ComputerPlayer);
+  text.innerHTML = restlut;
 }
+
+console.log(Computerplayer());
+
 //   if (player === "rock") {
 //     tie();
 //   }
