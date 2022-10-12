@@ -1,5 +1,5 @@
 //my variables
-const text = document.querySelector("h1");
+const text = document.querySelector(".header");
 const buttons = document.querySelector(".buttons");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
@@ -13,45 +13,46 @@ scissors.addEventListener("click", Scissors);
 
 //optionComputer
 function Computerplayer() {
-  var randomNum = Math.floor(Math.random() * 2);
+  var randomNum = Math.floor(Math.random() * 3 + 1);
+  //console.log(randomNum);
 
-  if (randomNum == 0) {
+  if (randomNum === 0) {
     return "rock";
   }
-  if (randomNum == 1) {
+  if (randomNum === 1) {
     return "paper";
-  } else if (randomNum == 2) {
+  } else if (randomNum === 2) {
     return "scissors";
   }
   //det ska vara något liknande för att visa datorns resultat
-  let ComputerplayerDisplay = Play(Computerplayer);
-  ComputerplayerDisplay.innerHTML = Computerplayer;
+  //let ComputerplayerDisplay = Play(Computerplayer);
+  ComputerplayerDisplay.innerHTML = randomNum;
+  console.log(Computerplayer());
 }
-console.log(Computerplayer());
 
 
 function Play(ComputerPlayer, Player) {
-  if (ComputerPlayer == Player) {
+  if (ComputerPlayer === Player) {
     return "tie";
   }
-  if (ComputerPlayer == "rock") {
-    if (Player == "paper") {
+  if (ComputerPlayer === "rock") {
+    if (Player === "paper") {
       return "Win";
     } else {
       return "You lose";
     }
   }
 
-  if (ComputerPlayer == "paper") {
-    if (Player == "scissors") {
+  if (ComputerPlayer === "paper") {
+    if (Player === "scissors") {
       return "Win";
     } else {
       return "You Lose";
     }
   }
 
-  if (ComputerPlayer == scissors) {
-    if (Player == "rock") {
+  if (ComputerPlayer === scissors) {
+    if (Player === "rock") {
       return "Win";
     } else {
       return "You lose";
